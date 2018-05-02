@@ -2,10 +2,4 @@ def distance(strand_a, strand_b):
     if len(strand_a) != len(strand_b):
         raise ValueError('Length of strands are not equal')
 
-    count = 0
-    
-    for a, b in zip(strand_a, strand_b):
-        if a != b:
-            count += 1
-
-    return count
+    return sum(a != b for a, b in zip(strand_a, strand_b))
